@@ -237,7 +237,7 @@ class utilities {
         $filePath = strpos($fileData['path'], 'files') === FALSE ? $fileData['path'] : substr($fileData['path'], 5);
         
         $result = '<div class="oclife_tile" data-fileid="' . $fileData['fileid'] . '" data-filePath="' . $pathInfo . '" data-fullPath="' . $filePath . '">';
-        $result .= '<div>' . $fileData['name'] . '</div>';
+        $result .= '<div><a href="/index.php/apps/files/ajax/download.php?files=' . $filePath . '">' . $fileData['name'] . '</a></div>';
         $thumbPath = \OCP\Util::linkToAbsolute('oclife', 'getThumbnail.php', array('filePath' => $filePath));
         $result .= '<img src="' . $thumbPath . '" />';
         $result .= '</div>';
